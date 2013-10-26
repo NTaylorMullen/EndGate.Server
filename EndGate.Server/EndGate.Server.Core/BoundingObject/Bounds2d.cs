@@ -13,7 +13,11 @@ namespace EndGate.Core.Net.BoundingObject
         public Vector2d Position { get; set; }
         public double Rotation { get; set; }
 
-        public abstract bool ContainsPoint(Vector2d point);
+        public abstract bool Contains(Vector2d point);
+        public abstract bool Contains(Bounds2d obj);
+        public abstract bool Contains(BoundingCircle circle);
+        public abstract bool Contains(BoundingRectangle rectangle);
+
         public abstract bool Intersects(Bounds2d obj);
         public abstract bool Intersects(BoundingCircle circle);
         public abstract bool Intersects(BoundingRectangle rectangle);

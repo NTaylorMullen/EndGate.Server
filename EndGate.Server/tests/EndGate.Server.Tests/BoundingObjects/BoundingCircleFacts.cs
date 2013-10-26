@@ -96,8 +96,8 @@ namespace EndGate.Core.Net.Tests
                 Position = new Vector2d(10, 5)
             };
 
-            Assert.False(circle.ContainsPoint(Vector2d.Zero));
-            Assert.True(circle.ContainsPoint(new Vector2d(3, 3)));
+            Assert.False(circle.Contains(Vector2d.Zero));
+            Assert.True(circle.Contains(new Vector2d(3, 3)));
         }
     }
 }

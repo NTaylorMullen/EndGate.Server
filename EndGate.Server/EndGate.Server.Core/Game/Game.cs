@@ -32,8 +32,18 @@ namespace EndGate.Core.Net
             Update(_gameTime);
         }
 
+        internal void PreparePush()
+        {
+            Push();
+        }
+
         public virtual void Update(GameTime gameTime)
         {
+        }
+
+        public virtual void Push()
+        {
+
         }
 
         public virtual void Dispose()

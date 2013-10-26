@@ -24,14 +24,12 @@ namespace EndGate.Core.Net.Tests
 
             rect.OnCollision += collisionData =>
             {
-                Assert.True(rect.Bounds.Position.Equivalent(collisionData.At));
                 Assert.Equal(circle, collisionData.With);
                 rectCollisionTriggered = true;
             };
 
             circle.OnCollision += collisionData =>
             {
-                Assert.True(circle.Bounds.Position.Equivalent(collisionData.At));
                 Assert.Equal(rect, collisionData.With);
                 circleCollisionTriggered = true;
             };
@@ -98,14 +96,12 @@ namespace EndGate.Core.Net.Tests
 
             rect.OnCollision += collisionData =>
             {
-                Assert.True(rect.Bounds.Position.Equivalent(collisionData.At));
                 Assert.Equal(circle, collisionData.With);
                 rectCollisionTriggered++;
             };
 
             circle.OnCollision += collisionData =>
             {
-                Assert.True(circle.Bounds.Position.Equivalent(collisionData.At));
                 Assert.Equal(rect, collisionData.With);
                 circleCollisionTriggered++;
             };

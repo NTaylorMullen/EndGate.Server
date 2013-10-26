@@ -51,10 +51,12 @@
     <Compile Include="Assets\Vectors\Vector3d.cs" />
     <Compile Include="Collision\CollisionData.cs" />
     <Compile Include="Collision\CollisionManager.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="GameConfiguration.cs" />
-    <Compile Include="GameRunner.cs" />
-    <Compile Include="GameTime.cs" />
+    <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\GameConfiguration.cs" />
+    <Compile Include="Game\GameLoopCallbacks.cs" />
+    <Compile Include="Game\GameRegistration.cs" />
+    <Compile Include="Game\GameRunner.cs" />
+    <Compile Include="Game\GameTime.cs" />
     <Compile Include="Interfaces\IUpdateable.cs" />
     <Compile Include="Loopers\ILooper.cs" />
     <Compile Include="Loopers\LooperCallback.cs" />

@@ -65,8 +65,8 @@ namespace EndGate.Core.Net.Collision
 
                         if (first.IsCollidingWith(second))
                         {
-                            first.Collided(new CollisionData(first.Bounds.Position.Clone(), second));
-                            second.Collided(new CollisionData(second.Bounds.Position.Clone(), first));
+                            first.Collided(new CollisionData(second));
+                            second.Collided(new CollisionData(first));
                             OnCollision(first, second);
                         }
                     }

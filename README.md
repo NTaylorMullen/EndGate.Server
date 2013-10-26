@@ -1,4 +1,4 @@
-EndGate.Net
+EndGate.Server
 ===========
 
-The beginning work of a .Net compatible EndGate code.
+The beginning work of an EndGate server API.

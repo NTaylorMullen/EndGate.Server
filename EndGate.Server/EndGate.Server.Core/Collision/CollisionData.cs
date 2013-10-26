@@ -9,13 +9,11 @@ namespace EndGate.Core.Net.Collision
 {
     public class CollisionData
     {
-        public CollisionData(Vector2d at, Collidable with)
+        public CollisionData(Collidable with)
         {
-            At = at;
             With = with;
         }
 
-        public Vector2d At { get; private set; }
         public Collidable With { get; private set; }
     }
 }

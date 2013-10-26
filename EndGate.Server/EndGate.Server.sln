@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0A243475-9D05-45FF-A989-A719DEB86CAF}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -8,14 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0A2434
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndGate.Core.Net", "EndGate.Core.Net\EndGate.Core.Net.csproj", "{97592EF1-7FE4-4EF6-9CCF-EBB5B5B1CE4B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{567934DC-BA31-440A-B355-A364C309E135}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndGate.Core.Net.Tests", "tests\EndGate.Core.Net.Tests\EndGate.Core.Net.Tests.csproj", "{EC353F64-70AA-4A3F-B59A-4845C808BDF9}"
-	ProjectSection(ProjectDependencies) = postProject
-		{97592EF1-7FE4-4EF6-9CCF-EBB5B5B1CE4B} = {97592EF1-7FE4-4EF6-9CCF-EBB5B5B1CE4B}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndGate.Server.Core", "EndGate.Server.Core\EndGate.Server.Core.csproj", "{97592EF1-7FE4-4EF6-9CCF-EBB5B5B1CE4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndGate.Server.Tests", "tests\EndGate.Server.Tests\EndGate.Server.Tests.csproj", "{EC353F64-70AA-4A3F-B59A-4845C808BDF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndGate.Server.SignalR", "EndGate.Server.SignalR\EndGate.Server.SignalR.csproj", "{AFF9D35C-2EDC-4608-A880-B58BD78EC0FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +32,10 @@ Global
 		{EC353F64-70AA-4A3F-B59A-4845C808BDF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC353F64-70AA-4A3F-B59A-4845C808BDF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC353F64-70AA-4A3F-B59A-4845C808BDF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFF9D35C-2EDC-4608-A880-B58BD78EC0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF9D35C-2EDC-4608-A880-B58BD78EC0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF9D35C-2EDC-4608-A880-B58BD78EC0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF9D35C-2EDC-4608-A880-B58BD78EC0FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

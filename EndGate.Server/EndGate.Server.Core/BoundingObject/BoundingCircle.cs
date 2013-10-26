@@ -51,9 +51,34 @@ namespace EndGate.Core.Net.BoundingObject
             return (cornerDistance_sq <= (this.Radius * this.Radius));
         }
 
-        public override bool ContainsPoint(Vector2d point)
+        public override bool Contains(Vector2d point)
         {
             return Position.Distance(point).Magnitude() < Radius;
+        }
+
+        public override bool Contains(Bounds2d obj)
+        {
+            return obj.Contains(this);
+        }
+
+        public override bool Contains(BoundingCircle circle)
+        {
+            return circle.Position.Distance(this.Position).Length() + circle.Radius <= this.Radius;
+        }
+
+        public override bool Contains(BoundingRectangle rectangle)
+        {
+            var corners = rectangle.Corners();
+
+            for (var i = 0; i < corners.Length; i++)
+            {
+                if (!this.Contains(corners[i]))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

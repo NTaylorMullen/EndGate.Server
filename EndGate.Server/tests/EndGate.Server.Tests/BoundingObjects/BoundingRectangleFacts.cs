@@ -149,18 +149,18 @@ namespace EndGate.Core.Net.Tests
                 Position = new Vector2d(3, 2)
             };
 
-            Assert.True(rect.ContainsPoint(rect.Position));
+            Assert.True(rect.Contains(rect.Position));
 
-            foreach (var vertex in rect.Vertices)
+            foreach (var vertex in rect.Corners())
             {
-                Assert.True(rect.ContainsPoint(vertex));
+                Assert.True(rect.Contains(vertex));
             }
 
-            Assert.False(rect.ContainsPoint(new Vector2d(-1, 0)));
-            Assert.False(rect.ContainsPoint(rect.TopRight + 1));
-            Assert.False(rect.ContainsPoint(rect.BotRight + 1));
-            Assert.False(rect.ContainsPoint(rect.TopLeft - 1));
-            Assert.False(rect.ContainsPoint(rect.BotLeft - 1));
+            Assert.False(rect.Contains(new Vector2d(-1, 0)));
+            Assert.False(rect.Contains(rect.TopRight + 1));
+            Assert.False(rect.Contains(rect.BotRight + 1));
+            Assert.False(rect.Contains(rect.TopLeft - 1));
+            Assert.False(rect.Contains(rect.BotLeft - 1));
         }
 
         [Fact]
@@ -172,23 +172,23 @@ namespace EndGate.Core.Net.Tests
                 Rotation = Math.PI / 4
             };
 
-            Assert.True(rect.ContainsPoint(rect.Position));
+            Assert.True(rect.Contains(rect.Position));
 
-            foreach (var vertex in rect.Vertices)
+            foreach (var vertex in rect.Corners())
             {
-                Assert.True(rect.ContainsPoint(vertex));
+                Assert.True(rect.Contains(vertex));
             }
 
-            Assert.False(rect.ContainsPoint(new Vector2d(-1, 0)));
-            Assert.False(rect.ContainsPoint(rect.TopRight + 1));
-            Assert.False(rect.ContainsPoint(rect.BotRight + 1));
-            Assert.False(rect.ContainsPoint(rect.TopLeft - 1));
-            Assert.False(rect.ContainsPoint(rect.BotLeft - 1));
+            Assert.False(rect.Contains(new Vector2d(-1, 0)));
+            Assert.False(rect.Contains(rect.TopRight + 1));
+            Assert.False(rect.Contains(rect.BotRight + 1));
+            Assert.False(rect.Contains(rect.TopLeft - 1));
+            Assert.False(rect.Contains(rect.BotLeft - 1));
 
-            Assert.True(rect.ContainsPoint(rect.TopRight - 1));
-            Assert.True(rect.ContainsPoint(rect.BotRight - 1));
-            Assert.True(rect.ContainsPoint(rect.TopLeft + 1));
-            Assert.True(rect.ContainsPoint(rect.BotLeft + 1));
+            Assert.True(rect.Contains(rect.TopRight - 1));
+            Assert.True(rect.Contains(rect.BotRight - 1));
+            Assert.True(rect.Contains(rect.TopLeft + 1));
+            Assert.True(rect.Contains(rect.BotLeft + 1));
         }
     }
 }

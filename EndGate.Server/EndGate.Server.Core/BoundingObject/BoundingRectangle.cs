@@ -16,12 +16,9 @@ namespace EndGate.Core.Net.BoundingObject
 
         public Size2d Size { get; set; }
 
-        public Vector2d[] Vertices
+        public Vector2d[] Corners()
         {
-            get
-            {
-                return new Vector2d[] { TopLeft, TopRight, BotLeft, BotRight };
-            }
+            return new Vector2d[] { TopLeft, TopRight, BotLeft, BotRight };
         }
 
         public Vector2d TopLeft
@@ -105,13 +102,13 @@ namespace EndGate.Core.Net.BoundingObject
             else if (obj.Position.Distance(Position).Magnitude() <= obj.Size.Radius + Size.Radius) // Check if we're somewhat close to the object that we might be colliding with
             {
                 var axisList = new Vector2d[] { TopRight - TopLeft, TopRight - BotRight, obj.TopLeft - obj.BotLeft, obj.TopLeft - obj.TopRight };
-                var myVertices = Vertices;
-                var theirVertices = obj.Vertices;
+                var myCorners = Corners();
+                var theirCorners = obj.Corners();
 
                 foreach (var axi in axisList)
                 {
-                    var myProjections = Vector2dHelpers.GetMinMaxProjections(axi, myVertices);
-                    var theirProjections = Vector2dHelpers.GetMinMaxProjections(axi, theirVertices);
+                    var myProjections = Vector2dHelpers.GetMinMaxProjections(axi, myCorners);
+                    var theirProjections = Vector2dHelpers.GetMinMaxProjections(axi, theirCorners);
 
                     // No collision
                     if (theirProjections.Max < myProjections.Min || myProjections.Max < theirProjections.Min)
@@ -126,7 +123,7 @@ namespace EndGate.Core.Net.BoundingObject
             return false;
         }
 
-        public override bool ContainsPoint(Vector2d point)
+        public override bool Contains(Vector2d point)
         {
             double savedRotation = Rotation;
 
@@ -142,6 +139,34 @@ namespace EndGate.Core.Net.BoundingObject
             Rotation = savedRotation;
 
             return point.X <= myBotRight.X && point.X >= myTopLeft.X && point.Y <= myBotRight.Y && point.Y >= myTopLeft.Y;
+        }
+
+        public override bool Contains(Bounds2d obj)
+        {
+            return this.Contains(obj);
+        }
+
+        public override bool Contains(BoundingCircle circle)
+        {
+            return this.Contains(new Vector2d(circle.Position.X - circle.Radius, circle.Position.Y)) &&
+                this.Contains(new Vector2d(circle.Position.X, circle.Position.Y - circle.Radius)) &&
+                this.Contains(new Vector2d(circle.Position.X + circle.Radius, circle.Position.Y)) &&
+                this.Contains(new Vector2d(circle.Position.X, circle.Position.Y + circle.Radius));
+        }
+
+        public override bool Contains(BoundingRectangle rectangle)
+        {
+            var corners = rectangle.Corners();
+
+            for (var i = 0; i < corners.Length; i++)
+            {
+                if (!this.Contains(corners[i]))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

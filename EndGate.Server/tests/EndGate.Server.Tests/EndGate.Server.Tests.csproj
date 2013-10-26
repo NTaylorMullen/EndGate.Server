@@ -65,9 +65,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\EndGate.Core.Net\EndGate.Core.Net.csproj">
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EndGate.Server.Core\EndGate.Server.Core.csproj">
       <Project>{97592ef1-7fe4-4ef6-9ccf-ebb5b5b1ce4b}</Project>
-      <Name>EndGate.Core.Net</Name>
+      <Name>EndGate.Server.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
