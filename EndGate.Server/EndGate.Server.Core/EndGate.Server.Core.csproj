@@ -7,8 +7,8 @@
     <ProjectGuid>{97592EF1-7FE4-4EF6-9CCF-EBB5B5B1CE4B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EndGate.Core.Net</RootNamespace>
-    <AssemblyName>EndGate.Core.Net</AssemblyName>
+    <RootNamespace>EndGate.Server</RootNamespace>
+    <AssemblyName>EndGate.Server</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

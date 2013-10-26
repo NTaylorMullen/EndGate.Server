@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 
-namespace EndGate.Core.Net.Loopers
+namespace EndGate.Server.Loopers
 {
     internal class Looper : ILooper
     {

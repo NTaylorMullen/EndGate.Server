@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Concurrent;
-using EndGate.Core.Net.Loopers;
+using EndGate.Server.Loopers;
 
-namespace EndGate.Core.Net
+namespace EndGate.Server
 {
     internal class GameRunner
     {

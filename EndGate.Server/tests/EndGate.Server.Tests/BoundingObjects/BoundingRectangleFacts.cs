@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EndGate.Core.Net.Assets;
-using EndGate.Core.Net.BoundingObject;
+using EndGate.Server.Assets;
+using EndGate.Server.BoundingObject;
 using Xunit;
 
-namespace EndGate.Core.Net.Tests
+namespace EndGate.Server.Tests
 {
     public class BoundingRectangleFacts
     {

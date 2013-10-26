@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EndGate.Core.Net.Assets;
+using EndGate.Server.Assets;
 
-namespace EndGate.Core.Net.Collision
+namespace EndGate.Server.Collision
 {
     public class CollisionData
     {

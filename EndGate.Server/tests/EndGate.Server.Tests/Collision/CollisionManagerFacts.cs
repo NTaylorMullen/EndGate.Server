@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading;
-using EndGate.Core.Net.Assets;
-using EndGate.Core.Net.BoundingObject;
-using EndGate.Core.Net.Collision;
+using EndGate.Server.Assets;
+using EndGate.Server.BoundingObject;
+using EndGate.Server.Collision;
 using Xunit;
 
-namespace EndGate.Core.Net.Tests
+namespace EndGate.Server.Tests
 {
     public class CollisionManagerFacts
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EndGate.Core.Net.Loopers;
+using EndGate.Server.Loopers;
 
-namespace EndGate.Core.Net
+namespace EndGate.Server
 {
     internal class GameLoopCallbacks
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EndGate.Core.Net.Assets
+namespace EndGate.Server.Assets
 {
     public class Vector2d
     {

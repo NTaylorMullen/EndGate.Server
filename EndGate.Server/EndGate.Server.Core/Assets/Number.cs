@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EndGate.Core.Net.Assets
+namespace EndGate.Server.Assets
 {
     // Thanks to Damian Edwards - https://gist.github.com/DamianEdwards/5260736
     public struct Number :

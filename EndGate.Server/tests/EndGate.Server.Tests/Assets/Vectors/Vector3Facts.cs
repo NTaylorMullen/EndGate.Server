@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EndGate.Core.Net.Assets;
+using EndGate.Server.Assets;
 using Xunit;
 
-namespace EndGate.Core.Net.Tests
+namespace EndGate.Server.Tests
 {
     public class Vector3dFacts
     {

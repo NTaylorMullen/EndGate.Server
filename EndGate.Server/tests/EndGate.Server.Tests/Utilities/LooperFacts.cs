@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading;
-using EndGate.Core.Net.Loopers;
 using Xunit;
+using EndGate.Server.Loopers;
 
-namespace EndGate.Core.Net.Tests
+namespace EndGate.Server.Tests
 {
     public class LooperFacts
     {

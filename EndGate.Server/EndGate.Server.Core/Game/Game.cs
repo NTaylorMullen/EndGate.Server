@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading;
-using EndGate.Core.Net.Collision;
-using EndGate.Core.Net.Interfaces;
+using EndGate.Server.Collision;
+using EndGate.Server.Interfaces;
 
-namespace EndGate.Core.Net
+namespace EndGate.Server
 {
     public abstract class Game : IUpdateable, IDisposable
     {

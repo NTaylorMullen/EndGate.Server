@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EndGate.Core.Net
+namespace EndGate.Server
 {
     public class GameRegistration
     {

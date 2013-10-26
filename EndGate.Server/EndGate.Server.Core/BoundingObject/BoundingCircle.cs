@@ -1,7 +1,7 @@
 ﻿using System;
-using EndGate.Core.Net.Assets;
+using EndGate.Server.Assets;
 
-namespace EndGate.Core.Net.BoundingObject
+namespace EndGate.Server.BoundingObject
 {
     public class BoundingCircle : Bounds2d
     {

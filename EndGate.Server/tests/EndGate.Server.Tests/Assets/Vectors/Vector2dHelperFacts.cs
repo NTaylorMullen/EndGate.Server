@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EndGate.Core.Net.Assets;
+using EndGate.Server.Assets;
 using Xunit;
 
-namespace EndGate.Core.Net.Tests.Assets.Vectors
+namespace EndGate.Server.Tests.Assets.Vectors
 {
     public class Vector2dHelperFacts
     {

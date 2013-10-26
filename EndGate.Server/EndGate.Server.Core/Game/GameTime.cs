@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EndGate.Core.Net.Interfaces;
+using EndGate.Server.Interfaces;
 
-namespace EndGate.Core.Net
+namespace EndGate.Server
 {
     public class GameTime
     {

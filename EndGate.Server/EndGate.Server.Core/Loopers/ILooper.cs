@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EndGate.Core.Net.Loopers
+namespace EndGate.Server.Loopers
 {
     internal interface ILooper : IDisposable
     {

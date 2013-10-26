@@ -2,7 +2,7 @@
 using System.Threading;
 using Xunit;
 
-namespace EndGate.Core.Net.Tests
+namespace EndGate.Server.Tests
 {
     public class GameFacts
     {

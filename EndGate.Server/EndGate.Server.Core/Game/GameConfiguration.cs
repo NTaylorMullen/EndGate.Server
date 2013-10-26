@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EndGate.Core.Net
+namespace EndGate.Server
 {
     public class GameConfiguration
     {

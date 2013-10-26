@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EndGate.Core.Net.Assets
+namespace EndGate.Server.Assets
 {
     internal static class Vector2dHelpers
     {

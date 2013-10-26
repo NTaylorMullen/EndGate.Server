@@ -1,9 +1,9 @@
 ﻿using System;
-using EndGate.Core.Net.Assets;
-using EndGate.Core.Net.BoundingObject;
+using EndGate.Server.Assets;
+using EndGate.Server.BoundingObject;
 using Xunit;
 
-namespace EndGate.Core.Net.Tests
+namespace EndGate.Server.Tests
 {
     public class BoundingCircleFacts
     {

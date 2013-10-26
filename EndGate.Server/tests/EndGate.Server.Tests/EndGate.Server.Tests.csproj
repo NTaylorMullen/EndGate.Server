@@ -7,8 +7,8 @@
     <ProjectGuid>{EC353F64-70AA-4A3F-B59A-4845C808BDF9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EndGate.Core.Net.Tests</RootNamespace>
-    <AssemblyName>EndGate.Core.Net.Tests</AssemblyName>
+    <RootNamespace>EndGate.Server.Tests</RootNamespace>
+    <AssemblyName>EndGate.Server.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>

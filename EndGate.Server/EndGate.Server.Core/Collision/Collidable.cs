@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
-using EndGate.Core.Net.BoundingObject;
+using EndGate.Server.BoundingObject;
 
-namespace EndGate.Core.Net.Collision
+namespace EndGate.Server.Collision
 {
     public class Collidable : IDisposable
     {
