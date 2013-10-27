@@ -59,9 +59,15 @@
     <Compile Include="Game\GameRegistration.cs" />
     <Compile Include="Game\GameRunner.cs" />
     <Compile Include="Game\GameTime.cs" />
+    <Compile Include="Interfaces\IMoveable.cs" />
     <Compile Include="Interfaces\IUpdateable.cs" />
     <Compile Include="Loopers\ILooper.cs" />
     <Compile Include="Loopers\LooperCallback.cs" />
+    <Compile Include="MovementControllers\IMoveEvent.cs" />
+    <Compile Include="MovementControllers\MoveEvent.cs" />
+    <Compile Include="MovementControllers\LinearDirections.cs" />
+    <Compile Include="MovementControllers\LinearMovementController.cs" />
+    <Compile Include="MovementControllers\MovementController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Loopers\Looper.cs" />
     <Compile Include="Loopers\TimedCallback.cs" />
