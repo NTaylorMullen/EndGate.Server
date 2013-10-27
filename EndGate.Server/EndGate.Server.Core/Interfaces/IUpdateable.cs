@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EndGate.Server.Interfaces
+namespace EndGate.Server
 {
     public interface IUpdateable
     {

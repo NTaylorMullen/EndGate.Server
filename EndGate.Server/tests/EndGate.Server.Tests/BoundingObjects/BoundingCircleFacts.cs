@@ -1,5 +1,5 @@
 ﻿using System;
-using EndGate.Server.Assets;
+using EndGate.Server;
 using EndGate.Server.BoundingObject;
 using Xunit;
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 using EndGate.Server.Collision;
-using EndGate.Server.Interfaces;
+using EndGate.Server;
 
 namespace EndGate.Server
 {

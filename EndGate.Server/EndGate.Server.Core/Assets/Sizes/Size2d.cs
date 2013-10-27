@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EndGate.Server.Assets
+namespace EndGate.Server
 {
     public class Size2d
     {

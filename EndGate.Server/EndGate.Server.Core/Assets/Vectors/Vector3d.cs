@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EndGate.Server.Assets
+namespace EndGate.Server
 {
     // Internal for now because the libraries do not fully support 3d
     internal class Vector3d

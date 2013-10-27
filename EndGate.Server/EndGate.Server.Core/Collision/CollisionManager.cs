@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using EndGate.Server.Interfaces;
+using EndGate.Server;
 
 namespace EndGate.Server.Collision
 {

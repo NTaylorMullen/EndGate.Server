@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading;
-using EndGate.Server.Assets;
+using EndGate.Server;
 using EndGate.Server.BoundingObject;
 using EndGate.Server.Collision;
 using Xunit;

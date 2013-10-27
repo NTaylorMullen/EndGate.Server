@@ -1,4 +1,4 @@
-﻿using EndGate.Server.Assets;
+﻿using EndGate.Server;
 
 namespace EndGate.Server.BoundingObject
 {
