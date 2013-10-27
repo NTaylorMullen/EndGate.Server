@@ -18,6 +18,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndGate.Server.Tests", "tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndGate.Server.SignalR", "EndGate.Server.SignalR\EndGate.Server.SignalR.csproj", "{813482B9-45F5-465C-BAF6-49D025ADE05C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{97368128-4FEC-4B28-B007-47F8D13DC25D}"
+	ProjectSection(SolutionItems) = preProject
+		build\Build.proj = build\Build.proj
+		build\EndGate.Server.Common.targets = build\EndGate.Server.Common.targets
+		build\EndGate.Server.Versions.targets = build\EndGate.Server.Versions.targets
+		build\MSBuild.Community.Tasks.dll = build\MSBuild.Community.Tasks.dll
+		build\MSBuild.Community.Tasks.targets = build\MSBuild.Community.Tasks.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

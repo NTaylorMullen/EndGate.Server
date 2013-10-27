@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>EndGate.Server.Core</id>
+    <title>EndGate.Server.Core</title>
+    <version>__ENDGATE_SERVER_VERSION__</version>
+    <authors>N. Taylor Mullen</authors>
+    <owners>N. Taylor Mullen</owners>
+    <licenseUrl>https://github.com/NTaylorMullen/EndGate.Server/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://endgate.net</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Core components to support a C# game server.</description>
+    <copyright>Copyright EndGate 2013</copyright>
+    <tags>EndGate EG Game Server EndGate.Server EG.Server Core EndGate.Server.Core</tags>
+  </metadata>
+  <files>
+    <file src="Net45\EndGate.Server.Core.dll" target="lib\net45" />
+    <file src="Net40\EndGate.Server.Core.dll" target="lib\net40" />
+  </files>
+</package>

@@ -7,17 +7,24 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR.Hubs;
 
-namespace EndGate.Server
+namespace EndGate.Server.SignalR
 {
-    public class UserManager<T> where T : IUser
+    public class UserManager<T> where T : IUser, new()
     {
         private ConcurrentDictionary<string, T> _users;
+        private IUserFactory<T> _userFactory;
         private long _userIds;
 
         public UserManager()
+            : this(new DefaultUserFactory<T>())
+        {
+        }
+
+        public UserManager(IUserFactory<T> factory)
         {
             _users = new ConcurrentDictionary<string, T>();
             _userIds = 0;
+            _userFactory = factory;
         }
 
         public T this[string connectionId]
@@ -38,25 +45,23 @@ namespace EndGate.Server
             }
         }
 
-        public T NewUser(string connectionId)
+        public T AddUser(string connectionId)
         {
-            var user = default(T);
-
-            user.ID = Interlocked.Increment(ref _userIds);
-            user.ConnectionID = connectionId;
+            var user = _userFactory.Create(Interlocked.Increment(ref _userIds), connectionId);
 
             _users.TryAdd(connectionId, user);
 
             return user;
         }
-        public T NewUser(HubCallerContext context)
+        public T AddUser(HubCallerContext context)
         {
-            return NewUser(context.ConnectionId);
+            return AddUser(context.ConnectionId);
         }
 
         public T RemoveUser(string connectionId)
         {
             T user;
+
             _users.TryRemove(connectionId, out user);
 
             return user;

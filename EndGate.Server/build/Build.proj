@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildProjectDirectory)\EndGate.Server.Versions.targets" />
+
+  <PropertyGroup>
+    <ProjectRoot>$(MSBuildProjectDirectory)\..</ProjectRoot>
+    <Configuration Condition="$(Configuration) == ''">Debug</Configuration>
+    <ArtifactsDir>$(ProjectRoot)\artifacts\$(Configuration)</ArtifactsDir>
+    <ProjectArtifactsDir>$(ArtifactsDir)\projects</ProjectArtifactsDir>
+    <PackagesArtifactsDir>$(ArtifactsDir)\packages</PackagesArtifactsDir>
+    <PackageSrcDir>$(ArtifactsDir)\package-src</PackageSrcDir>
+    <NuspecsDirectoryName>nuspecs</NuspecsDirectoryName>
+    <NuspecsSourceDir>$(ProjectRoot)\$(NuspecsDirectoryName)</NuspecsSourceDir>
+    <NuspecsArtifactsDir>$(ArtifactsDir)\$(NuspecsDirectoryName)</NuspecsArtifactsDir>
+    <MSBuildCommunityTasksPath>$(MSBuildProjectDirectory)</MSBuildCommunityTasksPath>
+    <NuGetToolsPath>$(ProjectRoot)\.nuget</NuGetToolsPath>
+    <NuGetExePath>$(NuGetToolsPath)\nuget.exe</NuGetExePath>
+    <ReadmesDir>$(ProjectRoot)\readmes</ReadmesDir>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.targets" />
+
+  <ItemGroup>
+    <Projects Include="$(ProjectRoot)\EndGate.Server.Core\EndGate.Server.Core.csproj"></Projects>
+    <Projects Include="$(ProjectRoot)\EndGate.Server.SignalR\EndGate.Server.SignalR.csproj"></Projects>
+  </ItemGroup>
+
+  <ItemDefinitionGroup>
+    <Projects>
+      <BuildTargets>Build</BuildTargets>
+      <BuildProperties>Configuration=$(Configuration);ArtifactsDir=$(ProjectArtifactsDir);SolutionDir=$(ProjectRoot)\;</BuildProperties>
+    </Projects>
+  </ItemDefinitionGroup>
+
+  <Target Name="BuildCmd" DependsOnTargets="Build">
+  </Target>
+
+  <Target Name="Build" DependsOnTargets="CreateArtifactsDir">
+    <MSBuild Projects="@(Projects)"
+             Targets="%(BuildTargets)"
+             Properties="%(BuildProperties)"/>
+  </Target>
+
+  <Target Name="CreateArtifactsDir">
+    <RemoveDir Directories="$(ArtifactsDir)" Condition="Exists('$(ArtifactsDir)')" ContinueOnError="true" />
+    <MakeDir Directories="$(ArtifactsDir)" Condition="!Exists('$(ArtifactsDir)')" />
+    <MakeDir Directories="$(PackagesArtifactsDir)" Condition="!Exists('$(PackagesArtifactsDir)')" />
+    <MakeDir Directories="$(NuspecsArtifactsDir)" Condition="!Exists('$(NuspecsArtifactsDir)')" />
+  </Target>
+
+  <Target Name="BuildPackages" DependsOnTargets="Build; CopyArtifacts;">
+    <ItemGroup>
+      <NuspecsArtifacts Include="$(NuspecsArtifactsDir)\*.nuspec" ></NuspecsArtifacts>
+    </ItemGroup>
+
+    <!-- Update Nuspec artifact files -->
+    <FileUpdate Files="@(NuspecsArtifacts)" Regex="__ENDGATE_SERVER_VERSION__" ReplacementText="$(EndGateServerVersion)" />
+
+    <Exec Command="&quot;$(NuGetExePath)&quot; pack &quot;%(NuspecsArtifacts.Identity)&quot; -o &quot;$(PackagesArtifactsDir)&quot; -basePath &quot;$(PackageSrcDir)&quot;"
+                LogStandardErrorAsError="true" />
+  </Target>
+
+  <Target Name="CopyArtifacts" DependsOnTargets="Build">
+    <ItemGroup>
+      <Artifacts Include="$(NuspecsSourceDir)\*.nuspec">
+        <Destination>$(NuspecsArtifactsDir)</Destination>
+      </Artifacts>
+      <Artifacts Include="$(ReadmesDir)\*.txt">
+        <Destination>$(PackageSrcDir)\Content</Destination>
+      </Artifacts>
+      <Artifacts Include="$(ProjectArtifactsDir)\%(Projects.FileName)\EndGate.Server.*.dll;
+                          $(ProjectArtifactsDir)\%(Projects.FileName)\EndGate.Server.*.pdb;
+                          $(ProjectArtifactsDir)\%(Projects.FileName)\EndGate.Server.*.xml">
+        <Destination>$(PackageSrcDir)\Net45</Destination>
+      </Artifacts>
+      <Artifacts Include="$(ProjectArtifactsDir)\%(Projects.FileName)\EndGate.Server.*.dll;
+                          $(ProjectArtifactsDir)\%(Projects.FileName)\EndGate.Server.*.pdb;
+                          $(ProjectArtifactsDir)\%(Projects.FileName)\EndGate.Server.*.xml">
+        <Destination>$(PackageSrcDir)\Net40</Destination>
+      </Artifacts>
+    </ItemGroup>    
+      
+    <!-- Setup Nuspecs within artifacts directory -->
+    <Copy SourceFiles="@(Artifacts)" DestinationFiles="@(Artifacts->'%(Destination)\%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+</Project>

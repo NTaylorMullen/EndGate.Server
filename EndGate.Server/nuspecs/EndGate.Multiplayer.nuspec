@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>EndGate.Multiplayer</id>
+    <title>EndGate.Multiplayer</title>
+    <version>__ENDGATE_SERVER_VERSION__</version>
+    <authors>N. Taylor Mullen</authors>
+    <owners>N. Taylor Mullen</owners>
+    <licenseUrl>https://github.com/NTaylorMullen/EndGate.Server/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>http://endgate.net</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A game server and client used to build HTML5 multiplayer games.</description>
+    <copyright>Copyright EndGate 2013</copyright>
+    <tags>EndGate EG Game Server EndGate.Multiplayer Gaming Client Multiplayer</tags>
+    <dependencies>
+      <group targetFramework="net40">
+        <dependency id="Microsoft.AspNet.SignalR" version="[1,2)" />
+        <dependency id="EndGate.Server.SignalR" />
+        <dependency id="EndGate" />
+        <dependency id="signalr.TypeScript.DefinitelyTyped" />
+      </group>
+      <group targetFramework="net45">
+        <dependency id="Microsoft.AspNet.SignalR" version="2.0.0" />
+        <dependency id="EndGate.Server.SignalR" />
+        <dependency id="EndGate" />
+        <dependency id="signalr.TypeScript.DefinitelyTyped" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="content\readme.txt" target="readme.txt" />
+  </files>
+</package>
