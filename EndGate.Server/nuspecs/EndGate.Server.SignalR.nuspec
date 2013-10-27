@@ -18,7 +18,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="content\readme.txt" target="readme.txt" />
+    <file src="content\SignalRReadme.txt" target="readme.txt" />
     <file src="Net45\EndGate.Server.SignalR.dll" target="lib\net45" />
     <file src="Net40\EndGate.Server.SignalR.dll" target="lib\net40" />
   </files>

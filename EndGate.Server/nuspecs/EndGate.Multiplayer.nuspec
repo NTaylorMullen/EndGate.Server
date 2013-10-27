@@ -28,6 +28,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="content\readme.txt" target="readme.txt" />
+    <file src="content\MultiplayerReadme.txt" target="readme.txt" />
   </files>
 </package>
