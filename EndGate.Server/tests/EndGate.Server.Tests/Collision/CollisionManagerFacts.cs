@@ -13,8 +13,8 @@ namespace EndGate.Server.Tests
         public void CollisionManagerDetectsCollisions()
         {
             var cm = new CollisionManager();
-            var rect = new Collidable(new BoundingRectangle(new Size2d(30, 50)));
-            var circle = new Collidable(new BoundingCircle(10));
+            var rect = new Collidable(new BoundingRectangle(Vector2d.Zero, new Size2d(30, 50)));
+            var circle = new Collidable(new BoundingCircle(Vector2d.Zero, 10));
             bool rectCollisionTriggered = false;
             bool circleCollisionTriggered = false;
             bool managerCollisionTriggered = false;
@@ -83,8 +83,8 @@ namespace EndGate.Server.Tests
         [Fact]
         public void CollisionManagerWorksWithinGame()
         {
-            var rect = new Collidable(new BoundingRectangle(new Size2d(30, 50)));
-            var circle = new Collidable(new BoundingCircle(10));
+            var rect = new Collidable(new BoundingRectangle(Vector2d.Zero, new Size2d(30, 50)));
+            var circle = new Collidable(new BoundingCircle(Vector2d.Zero, 10));
             var game = new CollisionManagerGame();
 
             game.MonitorCollision(rect);

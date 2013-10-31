@@ -14,10 +14,7 @@ namespace EndGate.Server.Tests
         [Fact]
         public void UnrotatedRectangleCornersGetWorks()
         {
-            var rect = new BoundingRectangle(6, 6)
-            {
-                Position = new Vector2d(3, 3)
-            };
+            var rect = new BoundingRectangle(new Vector2d(3, 3), new Size2d(6, 6));
 
             Assert.True(rect.TopLeft.Equivalent(Vector2d.Zero));
             Assert.True(rect.TopRight.Equivalent(new Vector2d(6, 0)));
@@ -34,9 +31,8 @@ namespace EndGate.Server.Tests
         [Fact]
         public void RotatedRectangleCornersGetWorks()
         {
-            var rect = new BoundingRectangle(4, 2)
+            var rect = new BoundingRectangle(new Vector2d(3, 2), new Size2d(4, 2))
             {
-                Position = new Vector2d(3, 2),
                 Rotation = -Math.PI / 2
             };
 
@@ -59,14 +55,8 @@ namespace EndGate.Server.Tests
         [Fact]
         public void UnRotatedRectanglesCollideCorrectly()
         {
-            var rect1 = new BoundingRectangle(10, 6)
-            {
-                Position = new Vector2d(5, 3)
-            };
-            var rect2 = new BoundingRectangle(3, 3)
-            {
-                Position = new Vector2d(5, 3)
-            };
+            var rect1 = new BoundingRectangle(new Vector2d(5, 3), new Size2d(10, 6));
+            var rect2 = new BoundingRectangle(new Vector2d(5, 3), new Size2d(3, 3));
 
             Assert.True(rect1.Intersects(rect2));
             Assert.True(rect2.Intersects(rect1));
@@ -87,15 +77,11 @@ namespace EndGate.Server.Tests
         [Fact]
         public void RotatedRectanglesCollideCorrectly()
         {
-            var rect1 = new BoundingRectangle(4.24, 2.83)
+            var rect1 = new BoundingRectangle(new Vector2d(2.5, 2.5), new Size2d(4.24, 2.83))
             {
-                Position = new Vector2d(2.5, 2.5),
                 Rotation = - Math.PI / 4
             };
-            var rect2 = new BoundingRectangle(6, 4)
-            {
-                Position = new Vector2d(9, 4)
-            };
+            var rect2 = new BoundingRectangle(new Vector2d(9, 4), new Size2d(6, 4));
 
             Assert.False(rect1.Intersects(rect2));
             Assert.False(rect2.Intersects(rect1));
@@ -144,10 +130,7 @@ namespace EndGate.Server.Tests
         [Fact]
         public void UnrotatedRectangleContainsPointWorks()
         {
-            var rect = new BoundingRectangle(6, 4)
-            {
-                Position = new Vector2d(3, 2)
-            };
+            var rect = new BoundingRectangle(new Vector2d(3, 2), new Size2d(6, 4));
 
             Assert.True(rect.Contains(rect.Position));
 
@@ -166,9 +149,8 @@ namespace EndGate.Server.Tests
         [Fact]
         public void RotatedRectangleContainsPointWorks()
         {
-            var rect = new BoundingRectangle(4.24, 2.83)
+            var rect = new BoundingRectangle(new Vector2d(2.5, 2.5), new Size2d(4.24, 2.83))
             {
-                Position = new Vector2d(2.5, 2.5),
                 Rotation = Math.PI / 4
             };
 

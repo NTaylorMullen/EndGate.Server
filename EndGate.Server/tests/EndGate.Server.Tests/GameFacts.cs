@@ -18,7 +18,7 @@ namespace EndGate.Server.Tests
                 game1.Dispose();
             }, 40);
 
-            Assert.True(resetEvent.WaitOne(TimeSpan.FromSeconds(1.01)));
+            Assert.True(resetEvent.WaitOne(TimeSpan.FromSeconds(1.05)));
 
             // 40 is the default updates/second
             Assert.Equal(game1.UpdateCount, 40);

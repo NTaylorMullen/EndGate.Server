@@ -10,7 +10,7 @@ namespace EndGate.Server.Tests
         [Fact]
         public void AreaWorks()
         {
-            var obj = new BoundingCircle(10);
+            var obj = new BoundingCircle(Vector2d.Zero, 10);
 
             Assert.Equal(Math.Round(obj.Area()), 314);
         }
@@ -18,7 +18,7 @@ namespace EndGate.Server.Tests
         [Fact]
         public void CircumferenceWorks()
         {
-            var obj = new BoundingCircle(10);
+            var obj = new BoundingCircle(Vector2d.Zero, 10);
 
             Assert.Equal(Math.Round(obj.Circumference()), 63);
         }
@@ -26,12 +26,12 @@ namespace EndGate.Server.Tests
         [Fact]
         public void IsCollidingWithOtherCircleWorks()
         {
-            var circle1 = new BoundingCircle(10)
+            var circle1 = new BoundingCircle(Vector2d.Zero, 10)
             {
                 Position = new Vector2d(10, 5)
             };
 
-            var circle2 = new BoundingCircle(6)
+            var circle2 = new BoundingCircle(Vector2d.Zero, 6)
             {
                 Position = new Vector2d(17, 5)
             };
@@ -50,12 +50,12 @@ namespace EndGate.Server.Tests
         [Fact]
         public void IsCollidingWithRectangleWorks()
         {
-            var rect = new BoundingRectangle(10, 6)
+            var rect = new BoundingRectangle(Vector2d.Zero, new Size2d(10, 6))
             {
                 Position = new Vector2d(5, 3)
             };
 
-            var circle = new BoundingCircle(3)
+            var circle = new BoundingCircle(Vector2d.Zero, 3)
             {
                 Position = new Vector2d(14, 3)
             };
@@ -72,10 +72,11 @@ namespace EndGate.Server.Tests
 
             Assert.True(circle.Intersects(rect));
 
-            circle = new BoundingCircle(50) {
+            circle = new BoundingCircle(Vector2d.Zero, 50)
+            {
                 Position = new Vector2d(156, 165)
             };
-            rect = new BoundingRectangle(new Size2d(200, 100))
+            rect = new BoundingRectangle(Vector2d.Zero, new Size2d(200, 100))
             {
                 Position = new Vector2d(300, 200)
             };
@@ -91,7 +92,7 @@ namespace EndGate.Server.Tests
         [Fact]
         public void ContainsPointWorks()
         {
-            var circle = new BoundingCircle(10)
+            var circle = new BoundingCircle(Vector2d.Zero, 10)
             {
                 Position = new Vector2d(10, 5)
             };

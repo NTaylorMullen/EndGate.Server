@@ -2,6 +2,9 @@
 
 namespace EndGate.Server
 {
+    /// <summary>
+    /// Defines a GameConfiguration object that is used to represent the current state of a game object.
+    /// </summary>
     public class GameConfiguration
     {
         private const int DefaultUpdateRate = 40;
@@ -12,6 +15,10 @@ namespace EndGate.Server
         private int _savedUpdateRate;
         private int _savedPushRate;
 
+        /// <summary>
+        /// Creates a new instance of the GameConfiguration object.
+        /// </summary>
+        /// <param name="registration">An object that provides functions to modify the update and push rates.</param>
         public GameConfiguration(GameRegistration registration)
         {
             _updateRateSetter = registration.UpdateRateSetter;
@@ -21,6 +28,9 @@ namespace EndGate.Server
             PushRate = DefaultPushRate;
         }
 
+        /// <summary>
+        /// Gets or sets the UpdateRate of the game.  Update rates are represented as X many updates per second.
+        /// </summary>
         public int UpdateRate
         {
             get
@@ -34,6 +44,9 @@ namespace EndGate.Server
             }
         }
 
+        /// <summary>
+        /// Gets or sets the PushRate of the game.  Push rates are represented as X many pushes per second.
+        /// </summary>
         public int PushRate
         {
             get

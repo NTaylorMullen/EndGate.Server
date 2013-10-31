@@ -2,6 +2,10 @@
 
 namespace EndGate.Server.MovementControllers
 {
+    /// <summary>
+    /// A <see cref="MovementController"/> that moves objects at a linear rate.
+    /// </summary>
+    /// <example>If constructed with a move speed of 100, that means all the provided moveables will be moved at 100 pixels per second depending on where the LinearMovementController is trying to move.</example>
     public class LinearMovementController : MovementController
     {
         private bool _rotateWithMovements;
